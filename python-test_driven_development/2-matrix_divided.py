@@ -3,7 +3,17 @@
 
 
 def matrix_divided(matrix, div):
-    """ divides all elemnts of a matrix"""
+   """Divides all the elements of a matrix.
+    Arguments:
+        DataTypes.
+    Raises:
+        TypeError        (matrix): Matrix must be a matrix (lists of lists)(...).
+        TypeError (len of matrix): Each row of the matrix must have the(...).
+        TypeError           (div): div must be a number(...).
+        ZeroDivisionError   (/ 0): division by zero.
+    Returns:
+        Division of the matrix.
+    """
     
 if isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
     raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
