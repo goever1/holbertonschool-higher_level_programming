@@ -1,0 +1,27 @@
+dd_integer = __import__('0-add_integer').add_integer
+
+NATURAL INTEGERS:
+	>>> add_integer(3, 4)
+	7
+
+FLOAT:
+	>>> add_integer(4.3, 8)
+	12
+
+NEGATIVE:
+	>>> add_integer(-2, -3)
+	-5
+
+SINGLE ARGUMENT:
+	>>> add_integer(2)
+	100
+
+PASSING STRING A:
+	>>> add_integer("nnn", "2")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+PASSING STRING TO B:
+	>>> add_integer(2, "nnn")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
