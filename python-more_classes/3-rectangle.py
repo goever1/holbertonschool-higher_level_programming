@@ -55,12 +55,6 @@ class Rectangle:
         """presents a diagram of the rectangle defined for an object"""
         if self.__width == 0 or self.__height == 0:
             return ("")
-
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
-            if i < self.__height - 1:
-                print("\n", end='')
-            else:
-                print("#")
-        return ("")
+         else:
+             return "\n".join("#" * self.width for i in range(self.height))
+    pass
