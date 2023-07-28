@@ -16,4 +16,4 @@ if __name__ == "__main__":
                 ORDER BY `c`.`id`")
   
   print(", ".join([row[2] for row in
-                     db_connect.fetchall() if row[4] == sys.argv[4]]))
+                     cur.fetchall() if row[4] == sys.argv[4]]))
