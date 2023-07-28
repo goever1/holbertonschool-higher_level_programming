@@ -5,11 +5,11 @@ It list all states from database hbtn_0e_0_usa
 
 if __name__ == "__main__":
     import sys
-    import MySQLdb
+    import MySQLdb.connector
 
-    db = MySQLdb.connect(
+    db = MySQLdb.connector.connect(
         host='localhost',
-        port=3306
+        port='3306',
         user=sys.argv[1], 
         passwd=sys.argv[2], 
         db=sys.argv[3])
