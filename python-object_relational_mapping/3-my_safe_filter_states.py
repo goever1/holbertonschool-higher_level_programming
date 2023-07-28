@@ -13,7 +13,7 @@ if __name__ == "__main__":
   cur = db.cursor()
   cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC")
   
-  for row in cu.fetchall():
+  for row in cur.fetchall():
     if row[1] == sys.argv[4]:
       print(f"{row}")
 cur.close()
