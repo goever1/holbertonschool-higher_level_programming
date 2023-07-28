@@ -10,15 +10,10 @@ if __name__ == "__main__":
   db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], 
                        passwd=sys.argv[2], db=sys.argv[3])
   cur = db.cursor()
-  db.execute("SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id\
-              WHERE states.name='{}'\
-              ORDER BY cities.id ASC".format(sys.argv[4]))
+  db.execute("SELECT * FROM `cities` as `c` \
+                INNER JOIN `states` as `s` \
+                   ON `c`.`state_id` = `s`.`id` \
+                ORDER BY `c`.`id`")
   cities = cur.fetchall()
-  for i in range(0, len(cities)):
-    if i < (len(cities) -1):
-      print(cities[i][0], end=", ")
-    else
-      print(cities[i][0], end="")
-    print()
-  cur.close()
-  
+  print(", ".join([row[2] for row in
+                     db_connect.fetchall() if row[4] == sys.argv[4]]))
