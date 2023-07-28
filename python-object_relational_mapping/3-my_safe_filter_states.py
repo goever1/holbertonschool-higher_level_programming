@@ -7,13 +7,11 @@ if __name__ == "__main__":
   import sys
   import MySQLdb
   
-  db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-  cur = db.cursor()
-  to = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC"
-  cur.execute(to, (sys.argv[4],))
-  states = cur.fetchall()
-  
-  for state in states:
-    print(state)
-cur.close()
-db.close()
+  db_cnctn = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                             passwd=sys.argv[2], db=sys.argv[3],
+                             charset="utf8")
+  db_connect = db_cnctn.cursor()
+  db_connect.execute("SELECT * FROM states")
+  for row in db_connect.fetchall():
+    if row[1] == sys.argv[4]:
+      print(f"{row}")
