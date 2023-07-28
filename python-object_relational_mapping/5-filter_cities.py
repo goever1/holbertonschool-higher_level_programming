@@ -14,7 +14,11 @@ if __name__ == "__main__":
               WHERE states.name='{}'\
               ORDER BY cities.id ASC".format(sys.argv[4]))
   cities = cur.fetchall()
-  for city in cities:
-    print(cities)
-  db.close()
+  for i in range(0, len(cities)):
+    if i < (len(cities) -1):
+      print(cities[i][0], end=", ")
+    else
+      print(cities[i][0], end="")
+    print()
+  cur.close()
   
