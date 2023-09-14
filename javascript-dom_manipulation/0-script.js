@@ -1,2 +1,2 @@
-const titre = document.querySelector('header');
-titre.style.color = '#FF0000';
+const title = document.querySelector('header');
+title.style.color = '#FF0000';
